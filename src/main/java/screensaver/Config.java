@@ -10,7 +10,7 @@ import java.util.Random;
 public class Config {
 
     @Bean
-    @Scope("prototype")
+    @Scope("periodical")
     public Color color() {
         Random random = new Random();
         return new Color(random.nextInt(255), random.nextInt(255), random.nextInt(255));
@@ -25,7 +25,6 @@ public class Config {
             }
         };
     }
-
 
     public static void main(String[] args) throws InterruptedException {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Config.class);
